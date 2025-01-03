@@ -1,69 +1,73 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    color: #000;
-    background-color: #fff;
-}
-span{
-    color: #078b3e;
-    /* text-decoration: none; */
-}
-span a{
-    text-decoration: none;
-    color: #078b3e;
+/* General Styles */
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #ff9138, #00beb0);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.container{
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Container Styles */
+.container {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
 }
-.mainContainer{
-    height: 80vh;
-    width: 80%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-    background-color: rgb(219, 204, 204);
-    /* margin-top: 40px; */
-    border-radius: 10px;
-    box-shadow: 0 10px 10px 15px rgba(0, 0, 0, 0.3);
 
+/* Form Heading */
+form h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #333;
+  font-weight: bold;
 }
-.pageTitle{
-    margin-top: 40px;
-    height: 20vh;
-    /* background-color: blueviolet; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+/* Input Fields */
+form input[type="text"],
+form input[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
-input{
-    display: block;
-    margin-bottom: 15px;
-    height: 6vh;
-    width: 50vh;
-    border: #078b3e;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: 500;
-    padding: 10px;
+
+/* Input Focus */
+form input[type="text"]:focus {
+  border-color: #00beb0;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 190, 176, 0.5);
 }
-input::placeholder{
-    color: #000;
-    font-style: italic;
-    font-size: 14px;
-    font-weight: 500;
+
+/* Submit Button */
+form input[type="submit"] {
+  background: #ff9138;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
 }
-input:focus::placeholder{
-    color: #aaa;
-    font-style: normal;
+
+form input[type="submit"]:hover {
+  background: #00beb0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  form h4 {
+    font-size: 1.25rem;
+  }
 }

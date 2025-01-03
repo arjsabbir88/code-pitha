@@ -1,26 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CodePitta.com</title>
-    <link rel="stylesheet" href="details.css">
-</head>
-<body>
-    <div class="container">
-        <div class="mainContainer">
-        <div class="pageTitle">
-            <h1>Welcome to <span><a href="index.html">CodePitha.com</a></span></h1>
-            <h2>Please Enter Your details</h2>
+    <link rel="stylesheet" href="details.css" />
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CodePitha - Contact Form</title>
+        <link rel="stylesheet" href="styles.css" />
+      </head>
+      <body>
+        <div class="container">
+          <form method="post" action="" name="contact-form">
+            <h4>Contact Us</h4>
+            <input type="text" name="Name" placeholder="Your Name" />
+            <input type="text" name="Phone" placeholder="Your Phone" />
+            <input type="text" name="Department" placeholder="Department" />
+            <input type="text" name="Batch" placeholder="Batch" />
+            <input type="text" name="Roll" placeholder="Roll" />
+            <input type="submit" value="Submit" id="submit" />
+          </form>
         </div>
-            <div class="inputDocument">
-                <input type="text" placeholder="Enter your name">
-                <input type="number" placeholder="Enter your number.">
-                <input type="text" placeholder="Enter your department">
-                <input type="text" placeholder="Enter you batch">
-                <input type="text" placeholder="Enter your roll.">
-            </div>
-        </div>
-    </div>
-</body>
+        <script src="script.js"></script>
+      </body>
+    </html>
+
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbw5RAvvQFXP9_wE2FWHYwcUpxxpZUY_ZPaUhIHWsIcPW8-CRKTe7qY8OAjUjmj-5uo4/exec";
+
+      const form = document.forms["contact-form"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => alert("Thank you! Form is submitted"))
+          .then(() => {
+            window.location.reload();
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+    <script src="./script.js"></script>
+  </body>
 </html>
